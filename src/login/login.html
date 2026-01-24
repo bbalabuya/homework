@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login.css">
+    <title>Naver Login</title>
+</head>
+<body>
+   <main>
+    <section class="login-form">
+        <!-- 로그인 이미지 -->
+        <h1 class="login-logo">
+            <svg aria-label="네이버 로고"></svg>
+        </h1>
+
+        <!-- 입력창 -->
+        <form action="/">
+            <fieldset>
+                <legend class="sr-only">로그인</legend>
+                <!-- 아이디 입력창 -->
+                <div class="form-input">
+                    <label for="id-input">아이디</label>
+                    <input type="text" id="id-input" name="userId" required />
+                </div>
+                <!-- 비밀번호 입력창 -->
+                <div class="form-input">
+                    <label for="pw-input">비밀번호</label>
+                    <input type="password" id="pw-input" name="userPassword" required />
+                </div>
+
+                <!-- 로그인 버튼 -->
+                <button type="submit">로그인</button>
+            </fieldset>
+            <!-- 자동 로그인 옵션 -->
+            <input type="checkbox" id="login-remember">
+            <label for="login-remember">로그인 상태 유지</label>
+        </form>
+
+        
+        <!-- IP버튼 -->
+        <div class="ip-security">
+            <a href="/src/login/pages/ip_security.html" target="_blank">IP보안</a>
+            <button type="button" aria-pressed="false">OFF</button>
+        </div>
+    </section>
+   </main>
+</body>
+</html>
