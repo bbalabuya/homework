@@ -1,1 +1,24 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+    /* 16px이 기본 */
+  --font-base: 1rem;          
+  --color-text: #121212;
+  --color-main: #03cf5d;
+  --color-border: #dadada;
+  --color-focus: #24388d;
+  --color-bg: #fff;
+  --color-focus-bg: #e9f0fd;
+}
+
+
+.login-form{
+   width: 100%;
+}
+
+
+
+@media (min-width: 768px) {
+  .login-form {
+    width: 31.25rem;
+  }
+}
