@@ -37,7 +37,7 @@
 
             <!-- 아이디 -->
             <div class="input-group">
-              <input class="login-input" type="text" id="id-input" name="userId" required placeholder="아이디(이메일)" />
+              <input class="login-input" type="email" id="id-input" name="userId" required placeholder="아이디(이메일)" />
             </div>
 
             <!-- 비밀번호 -->
@@ -50,6 +50,7 @@
 
           <!-- 로그인 옵션 -->
           <div class="login-options">
+            <!-- 체크버튼 -->
             <label class="login-options__label" for="remember-login">
               <input type="checkbox" id="remember-login" />
 
@@ -83,14 +84,13 @@
 
               <span class="login-options__text">로그인 상태 유지</span>
             </label>
+            <!-- IP 보안 -->
+            <div class="ip-security">
+              <a href="/src/login/pages/ip_security.html" target="_blank">IP보안</a>
+              <button type="button" class="ip-button" aria-pressed="false">OFF</button>
+            </div>
           </div>
         </form>
-
-        <!-- IP 보안 -->
-        <div class="ip-security">
-          <a href="/src/login/pages/ip_security.html" target="_blank">IP보안</a>
-          <button type="button" aria-pressed="false">OFF</button>
-        </div>
       </section>
     </main>
   </body>

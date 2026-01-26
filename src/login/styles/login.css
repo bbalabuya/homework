@@ -26,6 +26,10 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+
+  main {
+    align-items: center;
+  }
 }
 
 body {
@@ -126,6 +130,12 @@ fieldset {
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+
+    align-items: center;
+  }
 }
 
 .login-options__label {
@@ -133,7 +143,14 @@ fieldset {
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  user-select: none;
+}
+
+.login-options__text {
+  display: inline-block;
+  transform: translateY(2px);
+}
+
+.login-options__text {
 }
 
 /* checkbox 숨김 */
@@ -157,13 +174,24 @@ fieldset {
 
 .ip-security {
   display: none;
+  gap: 0.5rem;
+
+  a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 }
 
-/* =========================
-   Responsive
-========================= */
-@media (min-width: 768px) {
-  main {
-    align-items: center;
-  }
+.ip-button {
+  font-size: 0.875rem;
+  border: 0;
+  padding: 0;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
 }
