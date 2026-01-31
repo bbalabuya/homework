@@ -1,3 +1,54 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+.all-in-one {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  inline-size: 100%;
+  block-size: var(--size);
+  padding-block-start: var(--large-spacing);
+  background-color: black;
+
+  .card-header {
+    color: var(--white);
+    font-size: var(--extra-large-text);
+  }
+
+  .second-header {
+    color: var(--white);
+    line-height: var(--line-normal);
+    margin-block-end: var(--x-small-spacing);
+    font-size: var(--medium-text);
+  }
+
+  .button-set {
+    gap: var(--base-spacing);
+
+    button {
+      padding-block: var(--x-small-spacing);
+      padding-inline: var(--small-spacing);
+      border-style: none;
+      border-radius: 999px;
+      font-size: var(--x-small-text);
+
+      &.more {
+        color: var(--white);
+        background-color: var(--blue-200);
+      }
+
+      &.price {
+        color: var(--blue-200);
+        background-color: var(--black);
+      }
+    }
+  }
+
+  .card-image {
+    inline-size: 734px;
+    /* 높이 수정 필요 */
+    block-size: 548px;
+    background: url(../products/iphone15_pro.jpeg) no-repeat;
+  }
+}
