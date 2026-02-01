@@ -4,32 +4,38 @@
 
 .all-in-one {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
+
   inline-size: 100%;
   block-size: var(--size);
+
   padding-block-start: var(--large-spacing);
   background-color: black;
+  text-align: center;
 
   .card-header {
     color: var(--white);
-    font-size: var(--extra-large-text);
+    font-size: var(--large-text);
+    margin-block-end: var(--small-spacing);
   }
 
   .second-header {
     color: var(--white);
     line-height: var(--line-normal);
+    font-size: var(--base-text);
     margin-block-end: var(--x-small-spacing);
-    font-size: var(--medium-text);
   }
 
   .button-set {
+    display: flex;
+
     button {
       padding-block: var(--x-small-spacing);
       padding-inline: var(--small-spacing);
       border: none;
       border-radius: 999px;
-      font-size: var(--x-small-text);
+      font-size: var(--xx-small-text);
 
       &.more {
         color: var(--white);
@@ -49,67 +55,42 @@
   }
 
   .card-image {
-    inline-size: 734px;
-    /* 높이 수정 필요 */
-    block-size: 548px;
-    background: url(../products/iphone15_pro.jpeg) no-repeat;
-    @import './reset.css';
-    @import './theme.css';
-    @import './base.css';
+    flex: 1;
+    inline-size: clamp(320px, 60vw, 734px);
+    block-size: clamp(240px, 45vw, 548px);
 
-    .all-in-one {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      inline-size: 100%;
-      block-size: var(--size);
-      padding-block-start: var(--large-spacing);
-      background-color: black;
+    background-image: url(../products/iphone15_pro.jpeg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -100px;
+  }
+}
 
-      .card-header {
-        color: var(--white);
-        font-size: var(--extra-large-text);
-      }
+/* wide screen */
+@media (min-width: 1024px) {
+  .all-in-one {
+    padding-block-start: var(--extra-large-spacing);
 
-      .second-header {
-        color: var(--white);
-        line-height: var(--line-normal);
-        margin-block-end: var(--x-small-spacing);
-        font-size: var(--medium-text);
-      }
+    .card-header {
+      font-size: var(--extra-large-text);
+    }
 
-      .button-set {
-        button {
-          padding-block: var(--x-small-spacing);
-          padding-inline: var(--small-spacing);
-          border: none;
-          border-radius: 999px;
-          font-size: var(--x-small-text);
+    .second-header {
+      font-size: var(--medium-text);
+    }
 
-          &.more {
-            color: var(--white);
-            background-color: var(--blue-200);
-          }
+    .button-set button {
+      font-size: var(--x-small-text);
+    }
 
-          &.price {
-            color: var(--blue-200);
-            background-color: transparent;
-            border: 1px solid var(--blue-200);
-          }
-        }
+    .card-image {
+      inline-size: 734px;
+      block-size: 548px;
 
-        button + button {
-          margin-left: var(--base-spacing);
-        }
-      }
-
-      .card-image {
-        inline-size: 734px;
-        /* 높이 수정 필요 */
-        block-size: 548px;
-        background: url(../products/iphone15_pro.jpeg) no-repeat;
-        background-position: center -20px;
-      }
+      background-image: url(../products/iphone15_pro_wide.jpeg);
+      background-size: 300% auto;
+      background-position-y: -100px;
     }
   }
 }
