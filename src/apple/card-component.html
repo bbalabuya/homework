@@ -10,22 +10,25 @@
     <link rel="stylesheet" href="./styles/card-component.css" />
   </head>
   <body>
-    <!-- 카드 컴포넌트 -->
-    <div class="ui-component">
-      <div class="all-in-one">
-        <!-- 카드 제목 -->
-        <h1 class="card-header">iPhone 15 Pro</h1>
-        <!-- 카드 부제목 -->
-        <h2 class="second-header">티타늄. 초강력. 초경량. 초프로.</h2>
-        <!-- 버튼세트 -->
-        <div class="button-set">
-          <button class="more">더 알아보기</button>
-          <button class="price">가격 보기</button>
-        </div>
-        <!-- 이미지 영역 -->
-        <div class="card-image"></div>
+    <body>
+      <div class="ui-component">
+        <!-- 카드 컴포넌트 -->
+        <section class="all-in-one iPhone-Pro">
+          <!-- 카드 제목 -->
+          <h1 class="card-header">iPhone 15 Pro</h1>
+
+          <!-- 카드 부제목 -->
+          <p class="second-header">티타늄. 초강력. 초경량. 초프로.</p>
+
+          <!-- 버튼 그룹 -->
+          <div class="button-set" role="group" aria-label="제품 관련 링크">
+            <a href="./index.html" class="more"> 더 알아보기 </a>
+            <a href="./index.html" class="price"> 가격 보기 </a>
+          </div>
+        </section>
+
+        <button type="button" class="copy-component">복사</button>
       </div>
-      <button type="button" class="copy-component">복사</button>
-    </div>
+    </body>
   </body>
 </html>

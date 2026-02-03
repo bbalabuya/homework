@@ -2,26 +2,24 @@
 @import './theme.css';
 @import './base.css';
 
+/* === 공통 영역 === */
 .all-in-one {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  inline-size: 100%;
   block-size: var(--size);
-
   padding-block-start: var(--large-spacing);
-  background-color: black;
   text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   .card-header {
-    color: var(--white);
     font-size: var(--large-text);
     margin-block-end: var(--small-spacing);
   }
 
   .second-header {
-    color: var(--white);
     line-height: var(--line-normal);
     font-size: var(--base-text);
     margin-block-end: var(--x-small-spacing);
@@ -30,44 +28,103 @@
   .button-set {
     display: flex;
 
-    button {
+    a {
       padding-block: var(--x-small-spacing);
       padding-inline: var(--small-spacing);
-      border: none;
       border-radius: 999px;
       font-size: var(--xx-small-text);
-
-      &.more {
-        color: var(--white);
-        background-color: var(--blue-200);
-      }
-
-      &.price {
-        color: var(--blue-200);
-        background-color: transparent;
-        border: 1px solid var(--blue-200);
-      }
+      text-decoration: none;
     }
 
-    button + button {
+    a + a {
       margin-left: var(--base-spacing);
     }
   }
+}
 
-  .card-image {
-    flex: 1;
-    inline-size: clamp(320px, 60vw, 734px);
-    block-size: clamp(240px, 45vw, 548px);
+/* === 제품 이미지 골라 담기 === */
+.iPhone-Pro {
+  background-image: image-set(url('../products/iphone15_pro.jpeg') 1x, url('../products/iphone15_pro_2x.jpeg') 2x);
+}
 
-    background-image: url(../products/iphone15_pro.jpeg);
-    background-size: 150%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: -100px;
+.iPhone {
+  background-image: image-set(url('../products/iphone15.jpeg') 1x, url('../products/iphone15_2x.jpeg') 2x);
+}
+
+.iPad-Pro {
+  background-image: image-set(url('../products/ipad_pro.jpeg') 1x, url('../products/ipad_pro_2x.jpeg') 2x);
+}
+
+.iPad-Air {
+  background-image: image-set(url('../products/ipad_air.jpeg') 1x, url('../products/ipad_air_2x.jpeg') 2x);
+}
+
+.watch {
+  background-image: image-set(url('../products/apple_watch.jpeg') 1x, url('../products/apple_watch_2x.jpeg') 2x);
+}
+
+.mac {
+  background-image: image-set(url('../products/macbook_air.jpeg') 1x, url('../products/macbook_air_2x.jpeg') 2x);
+}
+
+.airPods {
+  background-image: image-set(url('../products/airpods_pro.jpeg') 1x, url('../products/airpods_pro_2x.jpeg') 2x);
+}
+
+/* ===  === */
+.iPhone-Pro,
+.iPad-Pro,
+.watch,
+.airPods {
+  .card-header,
+  .second-header {
+    color: var(--white);
+  }
+
+  .button-set {
+    a.more {
+      background: var(--blue-200);
+      color: var(--white);
+      border: none;
+    }
+
+    a.price {
+      background: transparent;
+      color: var(--blue-200);
+      border: 1px solid var(--blue-200);
+    }
   }
 }
 
-/* wide screen */
+/* =========================
+   밝은 배경 카드 스타일
+========================= */
+.iPhone,
+.iPad-Air,
+.mac {
+  .card-header,
+  .second-header {
+    color: var(--black);
+  }
+
+  .button-set {
+    a.more {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+    }
+
+    a.price {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--black);
+    }
+  }
+}
+
+/* =========================
+   Wide Screen
+========================= */
 @media (min-width: 1024px) {
   .all-in-one {
     padding-block-start: var(--extra-large-spacing);
@@ -80,17 +137,21 @@
       font-size: var(--medium-text);
     }
 
-    .button-set button {
+    .button-set a {
       font-size: var(--x-small-text);
     }
+  }
 
-    .card-image {
-      inline-size: 734px;
-      block-size: 548px;
+  /* wide 이미지 필요한 3개만 교체 */
+  .iPhone-Pro {
+    background-image: image-set(url('../products/iphone15_pro_wide.jpeg') 1x, url('../products/iphone15_pro_wide_2x.jpeg') 2x);
+  }
 
-      background-image: url(../products/iphone15_pro_wide.jpeg);
-      background-size: 300% auto;
-      background-position-y: -100px;
-    }
+  .iPad-Pro {
+    background-image: image-set(url('../products/ipad_pro_wide.jpeg') 1x, url('../products/ipad_pro_wide_2x.jpeg') 2x);
+  }
+
+  .iPad-Air {
+    background-image: image-set(url('../products/ipad_air_wide.jpeg') 1x, url('../products/ipad_air_wide_2x.jpeg') 2x);
   }
 }
