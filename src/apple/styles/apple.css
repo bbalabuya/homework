@@ -1,3 +1,20 @@
-@import "./card-component.css";
+@import './card-component.css';
 
-/* 카드 레이아웃 */
+/* 애플 제품 판매 페이지 카드 레이아웃 */
+/* small screen */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--small-spacing);
+}
+
+/* big-screen */
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-grid .all-in-one:nth-child(-n + 3) {
+    grid-column: 1 / -1;
+  }
+}
